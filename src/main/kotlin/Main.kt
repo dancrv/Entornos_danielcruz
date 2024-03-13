@@ -1,27 +1,29 @@
 import kotlin.random.Random
 
 fun main() {
-    var m = Array(4) { Array<Int>(4) { Random.nextInt(1, 9)} }
+    var m = Array(4){Array<Int>(4){(1..9).random()}}
     var sumaFilas = Array(m.size){0}
     var sumaColum = Array(m[0].size){0}
 
 
-    for (f in m.indices){
-        for (c in m[f].indices){
+    imprimirMatriz(m)
+
+    println("La suma de las filas es")
+    println(sumarFilas(m, sumaFilas))
+    println("La suma de las columnas es")
+    println(sumarColumnas(m, sumaColum))
+}
+
+private fun imprimirMatriz(m: Array<Array<Int>>) {
+    for (f in m.indices) {
+        for (c in m[f].indices) {
             print("${m[f][c]} ")
         }
         println()
     }
-    sumarFilas(m, sumaFilas)
-    sumarColumnas(m,sumaColum)
-
-    println("La suma de las filas es")
-    println(Arrays.toString(sumaFilas))
-    println("La suma de las columnas es")
-    println(Arrays.toString(sumaColum))
 }
 
-private fun sumarColumnas(m:Array<Array<Int>>, sumaColumnas:Array<Int>){
+private fun sumarColumnas(m:Array<Array<Int>>, sumaColumnas:Array<Int>): Int {
     var f: Int = 0
     var c: Int = 0
 
@@ -33,9 +35,10 @@ private fun sumarColumnas(m:Array<Array<Int>>, sumaColumnas:Array<Int>){
         f = 0
         c++
     }
+    return sumaColumnas[c]
 }
 
-private fun sumarFilas(m: Array<Array<Int>>, sumaFilas: Array<Int>) {
+private fun sumarFilas(m: Array<Array<Int>>, sumaFilas: Array<Int>): Int {
     var f: Int = 0
     var c: Int = 0
 
@@ -47,4 +50,5 @@ private fun sumarFilas(m: Array<Array<Int>>, sumaFilas: Array<Int>) {
         c = 0
         f++
     }
+    return sumaFilas[f]
 }
