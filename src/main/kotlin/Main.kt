@@ -5,7 +5,7 @@ fun main() {
     var sumaFilas = Array(m.size){0}
     var sumaColum = Array(m[0].size){0}
 
-
+    saludar()
     imprimirMatriz(m)
 
     println("La suma de las filas es")
@@ -21,6 +21,10 @@ private fun imprimirMatriz(m: Array<Array<Int>>) {
         }
         println()
     }
+}
+
+private fun saludar() {
+    println("Hola!")
 }
 
 private fun sumarColumnas(m:Array<Array<Int>>, sumaColumnas:Array<Int>): Int {
