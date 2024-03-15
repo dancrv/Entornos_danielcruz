@@ -6,4 +6,4 @@ Pequeño programa que crea una matriz de 4x4 e implementa unas funciones para su
 <h3>Autor:</h3>
 Código escrito y proporcionado por María Luisa García.
 <h3>Colaborador:</h3>
-Daniel Cruz Villegas.
+Refactorizaciones y otros cambios en el código por Daniel Cruz Villegas.
